@@ -2,7 +2,7 @@ import { ReceitaProps } from "./[id_receita]/page"
 
 export default function PreparoComponent({ receita }: ReceitaProps) {
     return (
-        <div className="bg-white my-5 p-2 rounded-md flex flex-col md:flex-row gap-y-3 md:gap-x-3">
+        <div className="bg-white mt-5 p-2 rounded-md flex flex-col md:flex-row gap-y-3 md:gap-x-3">
             <div className="md:w-[40%] md:px-[20px] overflow-y-auto max-h-[300px] md:max-h-[400px]">
                 <h2 className="text-2xl text-center py-3 font-semibold">Instructions</h2>
                 <p className="text-gray-700 text-sm leading-relaxed">{receita.strInstructions}</p>

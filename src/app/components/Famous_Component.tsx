@@ -40,7 +40,7 @@ export default function Famous_Component() {
                                         className="object-cover object-center size-full max-h-[300px]"
                                     />
                                 </Link>
-                                <div className='absolute right-2 top-2 bg-slate-100 text-amber-400 font-bold px-2 py-1 rounded-xl shadow'>
+                                <div className='absolute right-2 top-2 bg-slate-100 text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
                                     {articleItem.regiao}
                                 </div>
                             </div>
