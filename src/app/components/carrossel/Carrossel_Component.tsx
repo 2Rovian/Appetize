@@ -6,7 +6,7 @@ export default function Carrossel_Component() {
         <div className="border-0 rounded-md overflow-hidden relative shadow">
             <div className="h-[400px]">
                 <img
-                src="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg" alt="imagem-receita"
+                src="https://www.themealdb.com/images/media/meals/wurrux1468416624.jpg" alt="imagem-receita"
                 className="size-full object-cover object-center"
                 />
             </div>

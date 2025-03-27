@@ -11,7 +11,9 @@ export default function Navbar(){
                     </Link>
                 </div>
                 <ul className="flex gap-x-4 text-xl">
-                    <li className="cursor-pointer">Home</li>
+                    <li className="cursor-pointer">
+                        <Link href='/'>Home</Link>
+                    </li>
                     <li className="cursor-pointer">Recipes</li>
                     
                 </ul>

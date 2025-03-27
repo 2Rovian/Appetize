@@ -5,16 +5,10 @@ export default function Footer() {
                 <div>
                     <p className="text-center">Appetize - Your gateway to thousands of delicious recipes. Find amazing dishes, try new flavors, and make every meal special.</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-1">
                     <p className="">Made by <span className="hover:underline text-white font-semibold"><a href="https://github.com/2Rovian">Rovian</a></span>.</p>
                 </div>
             </div>
         </footer>
     )
 }
-
-{/* <footer className=" text-slate-600 my-5 rounded-md flex items-center">
-    <div>
-        <p className="text-lg">Made by <span className="hover:underline text-slate-800 font-semibold"><a href="https://github.com/2Rovian" >Rovian</a></span>.</p>
-    </div>
-</footer> */}

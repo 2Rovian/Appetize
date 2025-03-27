@@ -60,7 +60,9 @@ export default function Famous_Component() {
                                 </div>
 
                                 <div className='lg:mt-2'>
-                                    <button className='px-4 py-1 border-2 rounded-lg font-semibold cursor-pointer hover:bg-black hover:text-white duration-300 ease-in-out'>Save Recipe</button>
+                                    <button className='px-4 py-1 border-2 font-semibold   hover:text-white 
+                                    bg-amber-500 hover:bg-amber-600 text-white rounded-md cursor-pointer duration-300 ease-in-out
+                                    '>Save Recipe</button>
                                     
                                 </div>
                             </div>
