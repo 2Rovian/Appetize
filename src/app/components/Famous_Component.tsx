@@ -59,11 +59,20 @@ export default function Famous_Component() {
                                     </span>
                                 </div>
 
-                                <div className='lg:mt-2'>
-                                    <button className='px-4 py-1 border-2 font-semibold   hover:text-white 
+                                <div className='lg:mt-2 flex lg:justify-start justify-between lg:gap-x-2'>
+
+                                    <button className='px-3 py-1 font-semibold  hover:text-white 
                                     bg-amber-500 hover:bg-amber-600 text-white rounded-md cursor-pointer duration-300 ease-in-out
                                     '>Save Recipe</button>
-                                    
+
+                                    <Link href={`receita/${articleItem.id}`} className='rounded-md'>
+                                        <button className='outline-gray-400 outline-1 px-2 py-1 rounded-md cursor-pointer shadow hover:bg-amber-700 hover:text-white duration-500 ease-in-out'>
+
+                                            See More
+                                        </button>
+
+                                    </Link>
+
                                 </div>
                             </div>
                         </article>

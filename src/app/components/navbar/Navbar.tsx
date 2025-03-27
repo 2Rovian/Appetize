@@ -7,7 +7,7 @@ export default function Navbar(){
             <nav className="size-full flex justify-between items-center ">
                 <div>
                     <Link href='/'>
-                        <span className="text-3xl font-bold font-serif">Appetize</span>
+                        <span className="text-3xl font-bold font-serif bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-orange-700">Appetize</span>
                     </Link>
                 </div>
                 <ul className="flex gap-x-4 text-xl">
