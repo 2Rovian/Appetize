@@ -4,27 +4,27 @@ export default function Famous_Component() {
     const array_articles = [
         {
             id: 52776, nome: 'Chocolate Gateau', categoria: 'Dessert', regiao: 'French', tags: 'Cake,Chocolate,Desert,Pudding',
-            img: 'https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg'
+            img: 'https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg/large'
         },
         {
             id: 52777, nome: 'Mediterranean Pasta Salad', categoria: 'Seafood', regiao: 'Italian', tags: 'Pasta,Baking',
-            img: 'https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg'
+            img: 'https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg/large'
         },
         {
             id: 52779, nome: 'Cream Cheese Tart', categoria: 'Starter', regiao: 'American', tags: 'Tart,Savory',
-            img: 'https://www.themealdb.com/images/media/meals/wurrux1468416624.jpg'
+            img: 'https://www.themealdb.com/images/media/meals/wurrux1468416624.jpg/large'
         },
         {
             id: 52783, nome: 'Rigatoni with fennel sausage sauce', categoria: 'Lamb', regiao: 'Italian', tags: 'Pasta',
-            img: 'https://www.themealdb.com/images/media/meals/qtqvys1468573168.jpg'
+            img: 'https://www.themealdb.com/images/media/meals/qtqvys1468573168.jpg/large'
         },
         {
             id: 52784, nome: 'Smoky Lentil Chili with Squash', categoria: 'Vegetarian', regiao: 'British', tags: 'Pulse',
-            img: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg'
+            img: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg/large'
         },
         {
             id: 52787, nome: 'Hot Chocolate Fudge', categoria: 'Dessert', regiao: 'American', tags: 'Snack,Chocolate',
-            img: 'https://www.themealdb.com/images/media/meals/xrysxr1483568462.jpg'
+            img: 'https://www.themealdb.com/images/media/meals/xrysxr1483568462.jpg/large'
         }
     ];
     return (
@@ -34,10 +34,10 @@ export default function Famous_Component() {
                 {array_articles.map((articleItem) => (
                     <li key={articleItem.id}>
                         <article className="rounded-md shadow flex flex-col overflow-hidden">
-                            <div className="h-[70%] relative">
+                            <div className="h-[70%] relative overflow-hidden">
                                 <Link href={`receita/${articleItem.id}`} className='cursor-pointer'>
                                     <img src={articleItem.img} alt=""
-                                        className="object-cover object-center size-full max-h-[300px]"
+                                        className="object-cover object-center size-full max-h-[300px] hover:scale-110 duration-500 transition-transform"
                                     />
                                 </Link>
                                 <div className='absolute right-2 top-2 bg-slate-100 text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
