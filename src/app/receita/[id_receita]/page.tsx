@@ -28,15 +28,6 @@ export default async function id_receita({
     return (
         <div>
             <main className="flex flex-col">
-                {/* <div className="h-[350px] rounded-md overflow-hidden">
-                    <img src={receita.strMealThumb} alt={`${receita.strMeal} imagem`} 
-                    className="size-full object-cover"
-                    />
-                </div>
-                <div>
-                    <h1>{receita.strMeal}</h1>
-                    <p>{receita.strInstructions}</p>
-                </div> */}
                 <HeroComponent receita={receita} />
                 <PreparoComponent receita={receita} />
             </main>

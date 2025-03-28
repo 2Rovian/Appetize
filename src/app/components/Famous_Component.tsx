@@ -31,7 +31,7 @@ export default function Famous_Component() {
         <section >
             <h2 className="text-2xl font-semibold font-serif">Amazing Recipes</h2>
             <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
-                {array_articles.map((articleItem) => (
+                {array_articles.map((articleItem: any) => (
                     <li key={articleItem.id}>
                         <article className="rounded-md shadow flex flex-col overflow-hidden">
                             <div className="h-[70%] relative overflow-hidden">
