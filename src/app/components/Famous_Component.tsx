@@ -40,9 +40,13 @@ export default function Famous_Component() {
                                         className="object-cover object-center size-full max-h-[300px] hover:scale-110 duration-500 transition-transform"
                                     />
                                 </Link>
-                                <div className='absolute right-2 top-2 bg-slate-100 text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
+
+                                
+                                <Link href={`country/${articleItem.regiao}`} className='absolute right-2 top-2 bg-white text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
+                                    <span >
                                     {articleItem.regiao}
-                                </div>
+                                    </span>
+                                </Link>
                             </div>
 
                             <div className='grow lg:h-auto h-[140px] p-2 bg-white flex flex-col justify-between'>
