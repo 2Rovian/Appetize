@@ -1,4 +1,6 @@
 import { ReceitaProps } from "./[id_receita]/page";
+import Expand_img from "./Expand_img";
+import SaveRecipe from "./SaveRecipe";
 
 export default function HeroComponent({ receita }: ReceitaProps) {
     // Criar um array com os ingredientes e medidas filtrando os vazios
@@ -12,12 +14,14 @@ export default function HeroComponent({ receita }: ReceitaProps) {
     return (
         <div className="w-full h-full sm:h-[550px] rounded-md overflow-hidden flex flex-col sm:flex-row shadow-lg bg-amber-100 relative">
             {/* Imagem da Receita */}
-            <div className="h-[60%] sm:h-[100%] sm:grow">
+            <div className="h-[60%] sm:h-[100%] sm:grow relative">
                 <img
                     src={receita.strMealThumb} 
                     alt={receita.strMeal}
                     className="w-full h-full object-cover"
                 />
+                <Expand_img receitaImg={receita.strMealThumb}/>
+                <SaveRecipe />
             </div>
 
             {/* Informações da Receita */}

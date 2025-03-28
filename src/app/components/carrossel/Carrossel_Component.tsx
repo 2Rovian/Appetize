@@ -3,6 +3,8 @@ import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { useState } from "react";
 
+import Link from 'next/link';
+
 export default function Carrossel_Component() {
     const receitas_array = [
         { id: 52780, nome: 'Potato Gratin with Chicken', img: 'https://images.pexels.com/photos/10338427/pexels-photo-10338427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
@@ -42,9 +44,11 @@ export default function Carrossel_Component() {
                 </span>
             </div>
             <div className="absolute bottom-[15%] left-[10%] text-white">
-                <h2 className="font-bold font-serif text-4xl md:text-5xl max-w-[550px] select-none"
-                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)" }}
-                >{receitas_array[indiceAtual].nome}</h2>
+                <Link href={`/receita/${receitas_array[indiceAtual].id}`}>
+                    <h2 className="font-bold font-serif text-4xl md:text-5xl max-w-[550px] cursor-pointer"
+                    style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)" }}
+                    >{receitas_array[indiceAtual].nome}</h2>
+                </Link>
             </div>
         </div>
     )

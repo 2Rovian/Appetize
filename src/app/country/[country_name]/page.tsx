@@ -1,29 +1,23 @@
 import Link from 'next/link';
 
-export default async function Categoria_Nome({
+export default async function CountryRecipes({
     params
 }: {
-    params: Promise<{ nome_categoria: string }>
+    params: Promise<{ country_name: string }>
 }) {
-    // Busca por categoria:
-    // https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef
-    // Busca por id:
-    // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
-    const { nome_categoria } = await params;
-
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${nome_categoria}`);
+    // https://www.themealdb.com/api/json/v1/1/list.php?a=list
+    // https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
+    const { country_name } = await params;
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country_name}`);
     const data = await response.json();
 
     const receitas = data.meals;
-
-
     return (
         <div>
-
             <div className="flex items-center w-full">
                 <div className="bg-gray-400 h-[2px] grow" />
-                <h1 className="text-2xl px-4 font-semibold font-serif  whitespace-nowrap text-gray-700 ">
-                    Recipes with <span className='text-black font-bold'>{nome_categoria}</span>
+                <h1 className="text-2xl px-4  font-serif  whitespace-nowrap text-black font-bold">
+                    {country_name} Recipes
                 </h1>
                 <div className="bg-gray-400 h-[2px] grow" />
             </div>
@@ -63,6 +57,7 @@ export default async function Categoria_Nome({
                     </li>
                 ))}
             </ul>
+
         </div>
     )
 }
