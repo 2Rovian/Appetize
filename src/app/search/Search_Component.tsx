@@ -73,7 +73,7 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                         </span>
                     )}
                     {inputValue && CategoriaSelecionada === 'By Ingredient' && ShowDropdown && mealIngredientsFiltrados.length > 0 && (
-                        <ul className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg overflow-y-auto max-h-[150px]">
+                        <ul className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg overflow-y-auto max-h-[300px]">
                             {mealIngredientsFiltrados.map((meal, index) => (
                                 <li key={index} className="px-3 py-1 cursor-pointer hover:bg-amber-600 hover:text-white"
                                     onClick={() => handleSetInputValue(meal)}
