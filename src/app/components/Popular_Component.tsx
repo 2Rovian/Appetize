@@ -34,7 +34,7 @@ export default function Popular_Component() {
                
                 <li className="flex flex-col items-center gap-y-2 justify-center cursor-pointer ">
                     <Link href="/categories" className="flex flex-col items-center gap-y-2 p-2">
-                        <div className="w-[100px] h-[100px] rounded-full bg-slate-300 shadow-md flex items-center justify-center text-2xl">
+                        <div className="w-[100px] h-[100px] rounded-full text-amber-300 bg-amber-700 hover:border-4 duration-300 ease-in-out shadow-md flex items-center justify-center text-2xl">
                             <FaPlus />
                         </div>
                         <span className="text-lg font-semibold text-center">Categories</span>

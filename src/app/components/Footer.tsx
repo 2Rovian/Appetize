@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="py-5 bg-slate-500 text-slate-100 my-5 rounded-md flex items-center justify-center">
+        <footer className="py-5 bg-amber-950 text-slate-100 my-5 rounded-md flex items-center justify-center">
             <div className="h-full flex flex-col items-center justify-center text-sm sm:text-base md:text-lg px-10">
                 <div>
                     <p className="text-center">Appetize - Your gateway to thousands of delicious recipes. Find amazing dishes, try new flavors, and make every meal special.</p>

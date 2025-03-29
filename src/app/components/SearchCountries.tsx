@@ -34,7 +34,7 @@ export default function SearchCountries() {
                
                 <li className="flex flex-col items-center gap-y-2 justify-center cursor-pointer ">
                     <Link href="/countries" className="flex flex-col items-center gap-y-2 p-2">
-                        <div className="size-[120px] rounded-full bg-slate-300 shadow-md flex items-center justify-center text-2xl">
+                        <div className="size-[120px] rounded-full text-amber-300 bg-amber-700 hover:border-4 duration-300 ease-in-out shadow-md flex items-center justify-center text-2xl">
                             <FaPlus />
                         </div>
                         <span className="text-lg font-semibold text-center">Countries</span>
