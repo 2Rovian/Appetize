@@ -37,9 +37,18 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
         setShowDropdown(false);
     }
 
-    const handleSearchByIngredients = async (ingredient: string) => {
+    const handleSearch = async (query: string) => {
+        if (!query.trim()) return;
+
         try {
-            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+            let url = "";
+            if (CategoriaSelecionada === "By Recipe Name") {
+                url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
+            } else {
+                url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${query}`;
+            }
+
+            const response = await fetch(url);
             const data = await response.json();
             setRecipes(data.meals || []);
         } catch (error) {
@@ -51,7 +60,7 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
     return (
         <div>
             <div className="flex gap-x-2 mx-auto">
-                <div className='grow outline-1 outline-gray-300 shadow rounded-md relative flex items-center'>
+                <div className='grow outline-1 outline-gray-300 shadow rounded-md relative flex items-center bg-white'>
                     <input type="text" placeholder={`Search ${CategoriaSelecionada.toLowerCase()}...`}
                         className='size-full outline-none rounded-md pl-3'
                         value={inputValue}
@@ -63,7 +72,7 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                         ><IoCloseCircleOutline />
                         </span>
                     )}
-                    {inputValue && ShowDropdown && mealIngredientsFiltrados.length > 0 && (
+                    {inputValue && CategoriaSelecionada === 'By Ingredient' && ShowDropdown && mealIngredientsFiltrados.length > 0 && (
                         <ul className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg overflow-y-auto max-h-[150px]">
                             {mealIngredientsFiltrados.map((meal, index) => (
                                 <li key={index} className="px-3 py-1 cursor-pointer hover:bg-amber-600 hover:text-white"
@@ -74,7 +83,7 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                             ))}
                         </ul>
                     )}
-                    {inputValue && ShowDropdown && mealIngredientsFiltrados.length === 0 && (
+                    {inputValue && CategoriaSelecionada === 'By Ingredient' && ShowDropdown && mealIngredientsFiltrados.length === 0 && (
                         <div className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg h-[150px] justify-center items-center gap-y-2 text-amber-700 px-4">
                             <span className='text-6xl'>
                                 <FaGhost />
@@ -84,9 +93,10 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                     )}
                 </div>
                 <button className="px-6 py-2 bg-amber-500 hover:bg-amber-600 font-semibold text-white rounded-md cursor-pointer duration-300 ease-in-out"
-                    onClick={() => handleSearchByIngredients(inputValue)}
+                    onClick={() => handleSearch(inputValue)}
                 >Search Recipe</button>
             </div>
+
             {ShowDropdownRecipes && (
                 <ul className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4">
                     {recipes.map((meal: any) => (
@@ -122,8 +132,17 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                             </article>
                         </li>
                     ))}
-                    
+
                 </ul>
+            )}
+
+            {ShowDropdownRecipes && recipes.length === 0 && (
+                <div className="w-full flex flex-col bg-white border-1 rounded-md border-gray-300 shadow-lg h-[150px] justify-center items-center gap-y-2 text-amber-700 px-4">
+                <span className='text-6xl'>
+                    <FaGhost />
+                </span>
+                <span className="text-center">No recipes found.</span>
+            </div>
             )}
         </div>
 
