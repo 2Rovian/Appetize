@@ -35,14 +35,14 @@ export default function Famous_Component() {
                     <li key={articleItem.id}>
                         <article className="rounded-md shadow flex flex-col overflow-hidden">
                             <div className="h-[70%] relative overflow-hidden">
-                                <Link href={`receita/${articleItem.id}`} className='cursor-pointer'>
+                                <Link href={`recipe/${articleItem.id}`} className='cursor-pointer'>
                                     <img src={articleItem.img} alt=""
                                         className="object-cover object-center size-full max-h-[300px] hover:scale-110 duration-500 transition-transform"
                                     />
                                 </Link>
 
                                 
-                                <Link href={`country/${articleItem.regiao}`} className='absolute right-2 top-2 bg-white text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
+                                <Link href={`countries/${articleItem.regiao}`} className='absolute right-2 top-2 bg-white text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
                                     <span >
                                     {articleItem.regiao}
                                     </span>
@@ -51,7 +51,7 @@ export default function Famous_Component() {
 
                             <div className='grow lg:h-auto h-[140px] p-2 bg-white flex flex-col justify-between'>
                                 <div>
-                                    <Link href={`receita/${articleItem.id}`}>
+                                    <Link href={`recipe/${articleItem.id}`}>
                                         <h2 className="font-semibold text-xl lg:text-2xl">{articleItem.nome}</h2>
                                     </Link>
                                     <span className='text-lg'>
@@ -69,7 +69,7 @@ export default function Famous_Component() {
                                     bg-amber-500 hover:bg-amber-600 text-white rounded-md cursor-pointer duration-300 ease-in-out
                                     '>Save Recipe</button>
 
-                                    <Link href={`receita/${articleItem.id}`} className='rounded-md'>
+                                    <Link href={`recipe/${articleItem.id}`} className='rounded-md'>
                                         <button className='outline-gray-400 outline-1 px-2 py-1 rounded-md cursor-pointer shadow hover:bg-amber-700 hover:text-white duration-500 ease-in-out'>
 
                                             See More

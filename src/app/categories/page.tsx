@@ -31,7 +31,7 @@ export default function Categorias_Page() {
                         key={categoriaItem.id}
                         className="flex flex-col items-center gap-y-2 justify-center cursor-pointer duration-500 ease-in-out hover:scale-110"
                     >
-                        <Link href={`/categorias/${categoriaItem.nome}`} className="flex flex-col items-center justify-center p-2">
+                        <Link href={`/categories/${categoriaItem.nome}`} className="flex flex-col items-center justify-center p-2">
                             <div className="h-[100px] rounded-full overflow-hidden">
                                 <img
                                     src={categoriaItem.img}

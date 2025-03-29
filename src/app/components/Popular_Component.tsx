@@ -19,7 +19,7 @@ export default function Popular_Component() {
                         key={categoriaItem.id}
                         className="flex flex-col items-center gap-y-2 justify-center cursor-pointer duration-500 ease-in-out hover:scale-110"
                     >
-                        <Link href={`/categorias/${categoriaItem.nome}`} className="flex flex-col items-center justify-center p-2">
+                        <Link href={`/categories/${categoriaItem.nome}`} className="flex flex-col items-center justify-center gap-y-2 p-2">
                             <div className="h-[100px] rounded-full overflow-hidden">
                                 <img
                                     src={categoriaItem.img}
@@ -33,7 +33,7 @@ export default function Popular_Component() {
                 ))}
                
                 <li className="flex flex-col items-center gap-y-2 justify-center cursor-pointer ">
-                    <Link href="/categorias" className="flex flex-col items-center gap-y-2 p-2">
+                    <Link href="/categories" className="flex flex-col items-center gap-y-2 p-2">
                         <div className="w-[100px] h-[100px] rounded-full bg-slate-300 shadow-md flex items-center justify-center text-2xl">
                             <FaPlus />
                         </div>

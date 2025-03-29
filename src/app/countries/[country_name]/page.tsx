@@ -27,7 +27,7 @@ export default async function CountryRecipes({
                     <li key={meal.idMeal}>
                         <article className="rounded-md shadow flex flex-col overflow-hidden relative">
                             <div className="h-full relative overflow-hidden">
-                                <Link href={`http://localhost:3000/receita/${meal.idMeal}`} className='cursor-pointer'>
+                                <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
                                     <img src={meal.strMealThumb} alt=""
                                         className="object-cover object-center size-full max-h-[300px] hover:scale-105 duration-500 transition-transform"
                                     />
@@ -35,7 +35,7 @@ export default async function CountryRecipes({
 
                             </div>
                             <div className='absolute top-0 w-full bg-amber-950/50 text-white p-2 flex flex-col justify-between font-semibold'>
-                                <Link href={`http://localhost:3000/receita/${meal.idMeal}`}>
+                                <Link href={`http://localhost:3000/recipe/${meal.idMeal}`}>
                                     <h2 className='text-lg text-center cursor-pointer'>{meal.strMeal}</h2>
                                 </Link>
 
@@ -43,7 +43,7 @@ export default async function CountryRecipes({
 
                             <div className='px-2 absolute bottom-0 py-2 w-full'>
 
-                                <Link href={`http://localhost:3000/receita/${meal.idMeal}`} className='rounded-md'>
+                                <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='rounded-md'>
                                     <button className='px-2 py-1 lg:px-4 lg:py-2 lg:text-lg rounded-md cursor-pointer font-bold shadow text-white bg-amber-600  duration-500 ease-in-out hover:bg-amber-400'>
 
                                         See More

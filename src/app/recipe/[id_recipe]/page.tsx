@@ -14,13 +14,13 @@ export interface ReceitaProps {
     };
 }
 
-export default async function id_receita({
+export default async function id_recipe({
     params
 }: {
-    params: Promise<{ id_receita: string }>
+    params: Promise<{ id_recipe: string }>
 }) {
-    const { id_receita } = await params;
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id_receita}`);
+    const { id_recipe } = await params;
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id_recipe}`);
     const data = await response.json();
 
     const receita = data.meals[0];

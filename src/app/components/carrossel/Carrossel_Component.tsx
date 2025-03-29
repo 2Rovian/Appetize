@@ -44,7 +44,7 @@ export default function Carrossel_Component() {
                 </span>
             </div>
             <div className="absolute bottom-[15%] left-[10%] text-white">
-                <Link href={`/receita/${receitas_array[indiceAtual].id}`}>
+                <Link href={`/recipe/${receitas_array[indiceAtual].id}`}>
                     <h2 className="font-bold font-serif text-4xl md:text-5xl max-w-[550px] cursor-pointer"
                     style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)" }}
                     >{receitas_array[indiceAtual].nome}</h2>
