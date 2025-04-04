@@ -10,6 +10,8 @@ import Image from 'next/image';
 
 export default function Search_Component({ CategoriaSelecionada }: any) {
     const [mealIngredients, setMealIngredients] = useState<string[]>([]);
+    const [recipeNameSuggestions, setRecipeNameSuggestions] = useState<any[]>([]);
+
     const [inputValue, setInputValue] = useState<string>('');
     const [ShowDropdown, setShowDropdown] = useState<boolean>(false);
     const [recipes, setRecipes] = useState<any[]>([]);
@@ -32,6 +34,25 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
 
         fetchIngredients();
     }, []);
+
+    useEffect(() => {
+        const fetchRecipeNames = async () => {
+            if (CategoriaSelecionada === "By Recipe Name" && inputValue.trim()) {
+                try {
+                    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`);
+                    const data = await res.json();
+                    setRecipeNameSuggestions(data.meals || []);
+                } catch (err) {
+                    console.error("Erro ao buscar sugestões:", err);
+                }
+            } else {
+                setRecipeNameSuggestions([]);
+            }
+        };
+
+        fetchRecipeNames();
+    }, [inputValue, CategoriaSelecionada]);
+
 
     const handleSetInputValue = (meal: string) => {
         setInputValue(meal);
@@ -92,6 +113,30 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                             <span className="text-center">No ingredients match your search.</span>
                         </div>
                     )}
+                    {inputValue && CategoriaSelecionada === 'By Recipe Name' && ShowDropdown && recipeNameSuggestions.length > 0 && (
+                        <ul className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg overflow-y-auto max-h-[300px]">
+                            {recipeNameSuggestions.map((meal, index) => (
+                                <li key={index} className="px-3 py-1 cursor-pointer hover:bg-amber-600 hover:text-white"
+                                    onClick={() => {
+                                        setInputValue(meal.strMeal);
+                                        setShowDropdown(false);
+                                    }}
+                                >
+                                    {meal.strMeal}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    {inputValue && CategoriaSelecionada === 'By Recipe Name' && ShowDropdown && recipeNameSuggestions.length === 0 && (
+                        <div className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg h-[150px] justify-center items-center gap-y-2 text-amber-700 px-4">
+                            <span className='text-6xl'>
+                                <FaGhost />
+                            </span>
+                            <span className="text-center">No recipe names match your search.</span>
+                        </div>
+                    )}
+
                 </div>
                 <button className="px-6 py-2 bg-amber-500 hover:bg-amber-600 font-semibold text-white rounded-md cursor-pointer duration-300 ease-in-out"
                     onClick={() => handleSearch(inputValue)}
@@ -105,10 +150,10 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                             <article className="rounded-md shadow flex flex-col overflow-hidden relative">
                                 <div className="h-full relative overflow-hidden">
                                     <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
-                                        <Image 
-                                        width={600}
-                                        height={600}
-                                        src={meal.strMealThumb} alt=""
+                                        <Image
+                                            width={600}
+                                            height={600}
+                                            src={meal.strMealThumb} alt=""
                                             className="object-cover object-center size-full max-h-[300px] hover:scale-105 duration-500 transition-transform"
                                         />
                                     </Link>
@@ -142,11 +187,11 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
 
             {ShowDropdownRecipes && recipes.length === 0 && (
                 <div className="w-full flex flex-col bg-white border-1 rounded-md border-gray-300 shadow-lg h-[150px] justify-center items-center gap-y-2 text-amber-700 px-4">
-                <span className='text-6xl'>
-                    <FaGhost />
-                </span>
-                <span className="text-center">No recipes found.</span>
-            </div>
+                    <span className='text-6xl'>
+                        <FaGhost />
+                    </span>
+                    <span className="text-center">No recipes found.</span>
+                </div>
             )}
         </div>
 

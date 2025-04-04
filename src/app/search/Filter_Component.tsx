@@ -11,7 +11,7 @@ export default function Filter_Component() {
     return (
         <div>
             <div className="flex justify-between items-center mb-3">
-                <span className="text-xl font-serif font-semibold">Find recipes that sweat you best</span>
+                <span className="text-xl font-serif font-semibold">Feed your curiosity (and your belly)</span>
                 <span className="p-2 text-white bg-amber-500 rounded-md hover:bg-amber-400 cursor-pointer duration-300 ease-in-out"
                 onClick={() => setShowFilterDropdown(!ShowFilterDropdown)}
                 >
