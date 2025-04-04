@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Categorias_Page() {
     const categorias_array = [
@@ -33,10 +34,13 @@ export default function Categorias_Page() {
                     >
                         <Link href={`/categories/${categoriaItem.nome}`} className="flex flex-col items-center justify-center p-2">
                             <div className="h-[100px] rounded-full overflow-hidden">
-                                <img
+                                <Image
+                                    width={600}
+                                    height={600}
                                     src={categoriaItem.img}
                                     alt={`${categoriaItem.nome} image`}
                                     className="size-full object-cover object-center"
+                                    loading='lazy'
                                 />
                             </div>
                             <span className="text-lg font-semibold text-center">{categoriaItem.nome}</span>

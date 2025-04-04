@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaPlus } from "react-icons/fa";
 
@@ -21,10 +22,13 @@ export default function Popular_Component() {
                     >
                         <Link href={`/categories/${categoriaItem.nome}`} className="flex flex-col items-center justify-center gap-y-2 p-2">
                             <div className="h-[100px] rounded-full overflow-hidden">
-                                <img
+                                <Image
+                                    width={600}
+                                    height={600}
                                     src={categoriaItem.img}
                                     alt={`${categoriaItem.nome} image`}
                                     className="size-full "
+                                    loading='lazy'
                                 />
                             </div>
                             <span className="text-lg font-semibold text-center">{categoriaItem.nome}</span>

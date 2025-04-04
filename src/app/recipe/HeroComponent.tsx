@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Expand_img from "./Expand_img";
 import { RecipeProps } from "./recipe.type";
 import SaveRecipe from "./SaveRecipe";
@@ -15,7 +16,9 @@ export default function HeroComponent({ recipe }: RecipeProps) {
         <div className="w-full h-full sm:h-[550px] rounded-md overflow-hidden flex flex-col sm:flex-row shadow-lg bg-amber-100 relative">
             {/* Imagem da Receita */}
             <div className="h-[60%] sm:h-[100%] sm:grow relative">
-                <img
+                <Image
+                    width={800}
+                    height={800}
                     src={recipe.strMealThumb} 
                     alt={recipe.strMeal}
                     className="w-full h-full object-cover"

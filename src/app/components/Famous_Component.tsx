@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link'
 
 export default function Famous_Component() {
@@ -36,7 +37,12 @@ export default function Famous_Component() {
                         <article className="rounded-md shadow flex flex-col overflow-hidden">
                             <div className="h-[70%] relative overflow-hidden">
                                 <Link href={`recipe/${articleItem.id}`} className='cursor-pointer'>
-                                    <img src={articleItem.img} alt=""
+                                    <Image 
+                                    src={articleItem.img} 
+                                    alt={`image of ${articleItem.nome}`}
+                                    width={600}
+                                    height={600}
+                                    loading='lazy'
                                         className="object-cover object-center size-full max-h-[300px] hover:scale-110 duration-500 transition-transform"
                                     />
                                 </Link>

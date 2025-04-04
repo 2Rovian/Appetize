@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 
 import { FaGhost } from "react-icons/fa";
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function Discover_Component() {
     const [mealIngredients, setMealIngredients] = useState<string[]>([]);
@@ -115,7 +116,11 @@ export default function Discover_Component() {
                                 <article className="rounded-md shadow flex flex-col overflow-hidden relative">
                                     <div className="h-full relative overflow-hidden">
                                         <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
-                                            <img src={meal.strMealThumb} alt=""
+                                            <Image 
+                                            width={600}
+                                            height={600}
+                                            src={meal.strMealThumb} alt=""
+                                            loading='lazy'
                                                 className="object-cover object-center size-full max-h-[300px] hover:scale-105 duration-500 transition-transform"
                                             />
                                         </Link>
