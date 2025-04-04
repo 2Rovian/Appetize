@@ -1,8 +1,13 @@
 'use client'
 import { SubmitLoginForm } from "@/actions/actions";
 import { useState } from "react"
+// icons
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import ProvidersComponent from "./ProvidersComponent";
+
+// -----
 
 export default function LoginComponent() {
     const [isLogin, setIsLogin] = useState<boolean>(true);
@@ -10,7 +15,7 @@ export default function LoginComponent() {
     return (
         <div className="flex flex-col items-center mx-auto">
             {/* <h1 className="my-5 text-3xl font-bold font-serif">MeuSaas</h1> */}
-            <div className="mt-0 rounded-lg border bg-white border-gray-400 shadow text-black flex flex-col p-5 w-[95%] max-w-[500px]">
+            <div className="mt-0 rounded-lg border bg-white border-gray-400 shadow text-black flex flex-col p-5 w-full max-w-[500px]">
                 <div className="mb-5">
                     <h2 className="text-2xl text-amber-600 font-bold">{isLogin ? "Welcome" : "Sign Up"}</h2>
                     <p className="text-amber-900">{isLogin ? "Log in with your username and password." : "Sign up for free."}</p>
@@ -35,30 +40,7 @@ export default function LoginComponent() {
                 </form>
 
                 {isLogin && (
-                    <>
-                        <div className="flex items-center w-full my-4">
-                            <div className="h-[2px] bg-gray-400 flex-1"></div>
-                            <span className="px-3 text-gray-800 text-sm">Or sign in with</span>
-                            <div className="h-[2px] bg-gray-400 flex-1"></div>
-                        </div>
-                        <section className="flex flex-col gap-y-2">
-
-                            <button type='button' className='flex outline-1 outline-gray-300 text-amber-900 rounded-md py-2 pl-2 gap-x-2 cursor-pointer items-center w-full hover:outline-amber-600 duration-300 ease-in-out'>
-                                <span className='text-2xl'>
-                                    <FaGithub />
-                                </span>
-                                <span className="font-semibold">Github</span>
-                            </button>
-
-                            <button type='button' className='flex outline-1 outline-gray-300 text-amber-900 rounded-md py-2 pl-2 gap-x-2 cursor-pointer items-center w-full hover:outline-amber-600 duration-300 ease-in-out'>
-                                <span className='text-2xl'>
-                                    <FaGoogle />
-                                </span>
-                                <span className="font-semibold">Google</span>
-                            </button>
-
-                        </section>
-                    </>
+                    <ProvidersComponent />
                 )}
 
                 {isLogin && <p className="text-center text-gray-600 mt-5">By continuing, you agree to our Terms of Use and Privacy Policy.</p>}
