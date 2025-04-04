@@ -2,6 +2,7 @@
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { useState } from "react";
+import Image from "next/image";
 
 import Link from 'next/link';
 
@@ -26,9 +27,14 @@ export default function Carrossel_Component() {
     return (
         <div className="border-0 rounded-md overflow-hidden relative shadow">
             <div className="h-[500px]">
-                <img
-                src={receitas_array[indiceAtual].img} alt="imagem-receita"
-                className="size-full object-cover object-center "
+                {/* mudar pra image */}
+                <Image 
+                    src={receitas_array[indiceAtual].img}
+                    width={700}
+                    height={700}
+                    alt="recipe-img"
+                    className="size-full object-cover object-center"
+                    loading="lazy"
                 />
             </div>
             <div className='absolute top-[200px] w-full flex justify-between px-0 text-lg'>

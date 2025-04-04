@@ -1,7 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { signInWithGoogle } from "@/actions/actions";
 
 export default function ProvidersComponent() {
     return (
@@ -20,7 +19,7 @@ export default function ProvidersComponent() {
                     <span className="font-semibold">Github</span>
                 </button>
 
-                <form action={signInWithGoogle}>
+                <form action=''>
                     <button type='submit' className='flex outline-1 outline-gray-300 text-amber-900 rounded-md py-2 pl-2 gap-x-2 cursor-pointer items-center w-full hover:outline-amber-600 duration-300 ease-in-out'>
                         <span className='text-2xl'>
                             <FaGoogle />

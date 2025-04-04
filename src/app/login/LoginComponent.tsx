@@ -1,10 +1,6 @@
 'use client'
-import { SubmitLoginForm } from "@/actions/actions";
 import { useState } from "react"
 // icons
-import { FaGithub } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import ProvidersComponent from "./ProvidersComponent";
 
 // -----
@@ -21,7 +17,7 @@ export default function LoginComponent() {
                     <p className="text-amber-900">{isLogin ? "Log in with your username and password." : "Sign up for free."}</p>
                 </div>
                 
-                <form action={SubmitLoginForm}
+                <form
                 className='flex flex-col'
                 >
                     <div className="flex flex-col">

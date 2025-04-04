@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
     domains:
       [
         "www.themealdb.com",
-        'lh3.googleusercontent.com'
+        "lh3.googleusercontent.com",
+        "images.pexels.com"
       ]
   },
 };

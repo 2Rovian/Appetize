@@ -1,12 +1,12 @@
-import { ReceitaProps } from "./[id_receita]/page";
 import Expand_img from "./Expand_img";
+import { RecipeProps } from "./recipe.type";
 import SaveRecipe from "./SaveRecipe";
 
-export default function HeroComponent({ receita }: ReceitaProps) {
+export default function HeroComponent({ recipe }: RecipeProps) {
     // Criar um array com os ingredientes e medidas filtrando os vazios
     const ingredientes = Array.from({ length: 20 }, (_, i) => ({
-        ingrediente: receita[`strIngredient${i + 1}` as keyof typeof receita],
-        medida: receita[`strMeasure${i + 1}` as keyof typeof receita],
+        ingrediente: recipe[`strIngredient${i + 1}` as keyof typeof recipe],
+        medida: recipe[`strMeasure${i + 1}` as keyof typeof recipe],
     }))
     // Filtra os ingredientes e medidas vazias
     .filter(item => typeof item.ingrediente === 'string' && item.ingrediente.trim() !== "")
@@ -16,19 +16,19 @@ export default function HeroComponent({ receita }: ReceitaProps) {
             {/* Imagem da Receita */}
             <div className="h-[60%] sm:h-[100%] sm:grow relative">
                 <img
-                    src={receita.strMealThumb} 
-                    alt={receita.strMeal}
+                    src={recipe.strMealThumb} 
+                    alt={recipe.strMeal}
                     className="w-full h-full object-cover"
                 />
-                <Expand_img receitaImg={receita.strMealThumb}/>
+                <Expand_img recipeImg={recipe.strMealThumb}/>
                 <SaveRecipe />
             </div>
 
             {/* Informações da Receita */}
             <div className="p-6 md:w-[40%] sm:overflow-y-auto xl:p-8 flex flex-col gap-4">
-                <p className="text-sm uppercase text-gray-700">{receita.strTags || "Sem tags"}</p>
-                <h1 className="text-3xl font-bold font-serif">{receita.strMeal}</h1>
-                <p className="text-gray-600 text-sm">Category: {receita.strCategory} | Origin: {receita.strArea}</p>
+                <p className="text-sm uppercase text-gray-700">{recipe.strTags || "Sem tags"}</p>
+                <h1 className="text-3xl font-bold font-serif">{recipe.strMeal}</h1>
+                <p className="text-gray-600 text-sm">Category: {recipe.strCategory} | Origin: {recipe.strArea}</p>
 
                 {/* Lista de Ingredientes */}
                 <div className="bg-white p-4 rounded-lg shadow-md max-h-[400px] overflow-y-auto">
