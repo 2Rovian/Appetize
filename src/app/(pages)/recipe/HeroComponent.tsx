@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Expand_img from "./Expand_img";
-import { RecipeProps } from "./recipe.type";
+import { RecipeProps } from "../../types/recipe.type";
 import SaveRecipe from "./SaveRecipe";
 
 export default function HeroComponent({ recipe }: RecipeProps) {

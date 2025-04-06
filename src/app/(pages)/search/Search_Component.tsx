@@ -194,6 +194,5 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                 </div>
             )}
         </div>
-
     )
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
-import { FaUserCircle } from "react-icons/fa";
+import { GiBookmarklet } from "react-icons/gi";
 
 export default function Navbar() {
     return (
@@ -21,9 +21,11 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <div>
-                        <span className="text-4xl cursor-pointer">
-                            <FaUserCircle />
-                        </span>
+                        <Link href='/favorites'>
+                            <span className="text-4xl cursor-pointer">
+                                <GiBookmarklet />
+                            </span>
+                        </Link>
                     </div>
                 </div>
             </nav>

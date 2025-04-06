@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import { handleSaveRecipe } from '../recipe/handleSaveRecipe';
-import SaveBtn from './SaveBtn';
+import SaveBtn from '../../components/SaveBtn';
 
 export default function Famous_Component() {
     const array_articles = [

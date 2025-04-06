@@ -1,4 +1,4 @@
-import { RecipeProps } from "./recipe.type"
+import { RecipeProps } from "../../types/recipe.type"
 
 export default function PreparoComponent({ recipe }: RecipeProps) {
     return (

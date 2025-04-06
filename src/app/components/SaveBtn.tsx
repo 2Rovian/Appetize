@@ -1,6 +1,6 @@
 'use client'
-import { handleSaveRecipe } from "@/app/recipe/handleSaveRecipe"
-import { RecipeProps } from "@/app/recipe/recipe.type"
+import { handleSaveRecipe } from "@/app/actions/handleSaveRecipe";
+import { RecipeProps } from "@/app/types/recipe.type";
 
 export default function SaveBtn({ recipe }: RecipeProps) {
 

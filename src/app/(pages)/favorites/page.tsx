@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import NoRecipes from './NoRecipes'
 import LoadingRecipes from './LoadingRecipes'
+import { FaTrashAlt } from "react-icons/fa";
+
 
 interface Recipe {
   idMeal: string
@@ -45,11 +47,11 @@ export default function FavoritesPage() {
   }
 
   if (loading) {
-    return(<LoadingRecipes />)
+    return (<LoadingRecipes />)
   }
 
   if (favorites.length === 0) {
-    return(<NoRecipes />)
+    return (<NoRecipes />)
   }
 
   return (
@@ -65,10 +67,10 @@ export default function FavoritesPage() {
                 alt={recipe.strMeal}
                 width={400}
                 height={400}
-                className="w-full h-48 object-cover"
+                className="w-full h-[270px] object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-1">{recipe.strMeal}</h3>
+              <div className="p-4 pt-2">
+                <h3 className="text-2xl font-semibold mb-1">{recipe.strMeal}</h3>
                 <p className="text-gray-600 text-sm">
                   {recipe.strCategory} • {recipe.strArea}
                 </p>
@@ -77,10 +79,14 @@ export default function FavoritesPage() {
 
             <button
               onClick={() => removeFavorite(recipe.idMeal)}
-              className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute top-2 right-2 text-red-500 text-lg rounded-md cursor-pointer
+             opacity-0 group-hover:opacity-100
+             hover:px-2 hover:py-1 hover:bg-red-500 hover:text-red-50
+             transition-all duration-300 ease-in-out"
+
               aria-label="Remover dos favoritos"
             >
-              ❌
+              <FaTrashAlt />
             </button>
           </div>
         ))}

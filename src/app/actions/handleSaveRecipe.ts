@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { RecipeProps } from "./recipe.type"
+import { RecipeProps } from "../types/recipe.type"
 
 export function handleSaveRecipe(recipe: any, e?: React.MouseEvent){
     e?.stopPropagation();
@@ -18,7 +18,8 @@ export function handleSaveRecipe(recipe: any, e?: React.MouseEvent){
         Recipes_localStorage = [];
     }
 
-    const existingRecipe = Recipes_localStorage.some(rec => rec.id === recipe.id);
+    const existingRecipe = Recipes_localStorage.some(rec => rec.idMeal === recipe.idMeal);
+
 
     if(existingRecipe){
         toast.error(`${recipe.strMeal} is already saved`)
