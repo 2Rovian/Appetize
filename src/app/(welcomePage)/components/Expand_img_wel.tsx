@@ -3,11 +3,11 @@ import { useState } from "react"
 import { LuExpand, LuX } from "react-icons/lu";
 import Image from 'next/image'
 
-export default function Expand_img({ receitaImg }: any) {
+export default function Expand_img_wel({ receitaImg }: any) {
     const [MostrarImagem, setMostrarImagem] = useState<boolean>(false);
     return (
         <>
-            <span className='absolute hover:top-3 hover:right-3 top-4 right-4 text-white bg-black/70 hover:text-xl p-[6px] hover:p-2 rounded-[4px] cursor-pointer duration-300 ease-in-out'
+            <span className='absolute opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out top-2 left-2 text-white bg-black/70 hover:text-xl p-[6px] hover:p-2 rounded-[4px] cursor-pointer '
             onClick={() => setMostrarImagem(true)}
             >
                 <LuExpand />

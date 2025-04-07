@@ -10,7 +10,7 @@ export default function MainLayout({
 }>) {
   return (
     <div>
-      <main >
+      <main className="max-w-7xl mx-auto px-4 xl:px-0 ">
         <Navbar />
         {children}
         <Toaster position="bottom-right"/>

@@ -1,5 +1,3 @@
-import bgImg from "../../../public/bgImg3.jpg"
-import Image from "next/image";
 import "./local.css";
 
 export default function WelcomeLayout({
@@ -9,8 +7,6 @@ export default function WelcomeLayout({
 }>) {
   return (
     <div className="">
-      
-      {/* Conteúdo */}
       <main > 
         {children}
       </main>
