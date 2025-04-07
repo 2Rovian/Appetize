@@ -1,4 +1,3 @@
-
 import Alt_Carrossel_Component from "./components/Carrossel_Component";
 import Popular_Component from "./(pages)/(homePage)/Popular_Component";
 import Famous_Component from "./(pages)/(homePage)/Famous_Component";
