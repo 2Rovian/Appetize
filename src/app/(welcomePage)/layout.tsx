@@ -1,13 +1,19 @@
+import bgImg from "../../../public/bgImg3.jpg"
+import Image from "next/image";
 import "./local.css";
+
 export default function WelcomeLayout({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) {
-    return (
-      <div className="bg-gray-200 text-amber-500 w-full h-[1000px]">
-        <main>{children}</main>
-      </div>
-    );
-  }
-  
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <div className="">
+      
+      {/* Conteúdo */}
+      <main > 
+        {children}
+      </main>
+    </div>
+  );
+}
