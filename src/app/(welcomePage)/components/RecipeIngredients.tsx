@@ -4,34 +4,31 @@ import { IoLogoVercel } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
 import { useState } from "react";
 
-export default function RecipeIngredients() {
-    const [activeColor, setActiveColor] = useState<string>('bg-gradient-to-br from-red-400 to-amber-300');
+export default function RecipeIngredients() { 
+    const [activeColor, setActiveColor] = useState<string>('from-red-400 to-amber-300');
 
     const handleMouseEnter = (techName: string) => {
-        switch (techName) {
+        switch(techName){
             case 'Next.js':
-                setActiveColor('bg-gradient-to-br from-gray-900 to-gray-700');
+                setActiveColor('from-gray-900 to-gray-700');
                 break;
             case 'Tailwind':
-                setActiveColor('bg-gradient-to-br from-cyan-400 to-blue-500');
+                setActiveColor('from-cyan-400 to-blue-500');
                 break;
             case 'Vercel':
-                setActiveColor('bg-gradient-to-br from-black to-gray-800');
+                setActiveColor('from-black to-gray-800');
                 break;
             case 'TypeScript':
-                setActiveColor('bg-gradient-to-br from-blue-600 to-blue-400');
+                setActiveColor('from-blue-600 to-blue-400');
                 break;
             default:
-                setActiveColor('bg-gradient-to-br from-red-400 to-amber-300');
+                setActiveColor('from-red-400 to-amber-300');
         }
-    }
 
-    const handleMouseLeave = () => {
-        setActiveColor('bg-gradient-to-br from-red-400 to-amber-300');
     }
 
     return (
-        <div className={`relative h-80 rounded-xl shadow-lg ${activeColor} p-6 flex flex-col justify-center`}>
+        <div className={`relative h-80 rounded-xl shadow-lg bg-gradient-to-br ${activeColor} p-6 flex flex-col justify-center `}>
             <h3 className="text-center mb-6">
                 <span className="text-white font-bold text-xl">
                     Recipe Ingredients
@@ -64,7 +61,7 @@ export default function RecipeIngredients() {
                         key={tech.name}
                         className={`bg-white p-3 rounded-lg shadow-sm ${tech.color} border border-amber-100 hover:border-amber-300 transition-all flex items-center cursor-pointer gap-3 hover:scale-[1.02]`}
                         onMouseEnter={() => handleMouseEnter(tech.name)}
-                        onMouseLeave={handleMouseLeave}
+                        
                     >
                         <span className="text-2xl">{tech.icon}</span>
                         <span className="font-medium">{tech.name}</span>
