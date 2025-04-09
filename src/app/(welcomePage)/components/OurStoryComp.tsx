@@ -1,6 +1,4 @@
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { IoLogoVercel } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
+import RecipeIngredients from "./RecipeIngredients";
 
 
 export default function OurStoryComp() {
@@ -31,50 +29,7 @@ export default function OurStoryComp() {
                     </p>
                 </div>
             </div>
-            <div className="relative h-80 rounded-xl shadow-lg  bg-gradient-to-br from-red-400 to-amber-300 p-6 flex flex-col justify-center">
-                <h3 className="text-center mb-6">
-                    <span className="text-white font-bold text-xl">
-                    Recipe Ingredients
-                    </span>
-                </h3>
-                <div className="grid grid-cols-2 gap-4 px-8">
-                    {[
-                        {
-                            name: 'Next.js',
-                            icon: <RiNextjsFill />,
-                            color: 'text-[#000000]'
-                        },
-                        {
-                            name: 'Tailwind',
-                            icon: <RiTailwindCssFill />,
-                            color: 'text-[#06B6D4]'
-                        },
-                        {
-                            name: 'Vercel',
-                            icon: <IoLogoVercel />,
-                            color: 'text-[#000000]'
-                        },
-                        {
-                            name: 'TypeScript',
-                            icon: <SiTypescript />,
-                            color: 'text-[#3178C6]'
-                        }
-                    ].map((tech) => (
-                        <div
-                            key={tech.name}
-                            className={`bg-white p-3 rounded-lg shadow-sm ${tech.color} border border-amber-100 hover:border-amber-300 transition-all flex items-center gap-3 hover:scale-[1.02]`}
-                        >
-                            <span className="text-2xl">{tech.icon}</span>
-                            <span className="font-medium">{tech.name}</span>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-8 text-center">
-                    <p className="text-xs text-gray-400 inline-block px-3 py-1 bg-amber-50 rounded-full">
-                    ...and probably too much coffee
-                    </p>
-                </div>
-            </div>
+            <RecipeIngredients />
         </section>
     )
 }
