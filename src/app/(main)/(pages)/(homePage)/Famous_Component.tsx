@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import SaveBtn from '../../components/SaveBtn';
+import * as motion from 'motion/react-client'
 
 export default function Famous_Component() {
     const array_articles = [
@@ -30,7 +31,12 @@ export default function Famous_Component() {
         }
     ];
     return (
-        <section className='mt-12'>
+        <motion.section className='mt-12'
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+        >
             <h2 className="text-2xl font-semibold font-serif">Amazing Recipes</h2>
             <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
                 {array_articles.map((articleItem: any) => (
@@ -38,20 +44,20 @@ export default function Famous_Component() {
                         <article className=" flex flex-col overflow-hidden bg-white rounded-xl shadow-md">
                             <div className="h-[70%] relative overflow-hidden">
                                 <Link href={`recipe/${articleItem.idMeal}`} className='cursor-pointer'>
-                                    <Image 
-                                    src={articleItem.strMealThumb} 
-                                    alt={`image of ${articleItem.strMeal}`}
-                                    width={600}
-                                    height={600}
-                                    loading='lazy'
+                                    <Image
+                                        src={articleItem.strMealThumb}
+                                        alt={`image of ${articleItem.strMeal}`}
+                                        width={600}
+                                        height={600}
+                                        loading='lazy'
                                         className="object-cover object-center size-full max-h-[300px] hover:scale-110 duration-500 transition-transform"
                                     />
                                 </Link>
 
-                                
+
                                 <Link href={`countries/${articleItem.strArea}`} className='absolute right-2 top-2 bg-white text-amber-500 font-bold px-2 py-1 rounded-xl shadow'>
                                     <span >
-                                    {articleItem.strArea}
+                                        {articleItem.strArea}
                                     </span>
                                 </Link>
                             </div>
@@ -71,7 +77,7 @@ export default function Famous_Component() {
                                 </div>
 
                                 <div className='lg:mt-2 flex md:justify-start justify-between md:gap-x-2 items-center'>
-                                    <SaveBtn recipe={articleItem}/>
+                                    <SaveBtn recipe={articleItem} />
 
                                     <Link href={`recipe/${articleItem.idMeal}`} className='rounded-md'>
                                         <button className='border-2 hover:border-amber-600 text-gray-900/80 border-gray-900/80 px-1 md:px-2 lg:px-4 rounded-md transition-all hover:text-amber-600 cursor-pointer text-lg
@@ -88,6 +94,6 @@ export default function Famous_Component() {
                     </li>
                 ))}
             </ul>
-        </section>
+        </motion.section>
     )
 }

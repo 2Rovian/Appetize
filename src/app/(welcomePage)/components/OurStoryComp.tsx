@@ -1,9 +1,14 @@
 import RecipeIngredients from "./RecipeIngredients";
-
+import * as motion from 'motion/react-client'
 
 export default function OurStoryComp() {
     return (
-        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+        <motion.section className="mb-20 grid md:grid-cols-2 gap-12 items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            viewport={{ once: true }}
+        >
             <div className="">
                 <h2 className="text-3xl font-bold mb-6">
                     <span className="">
@@ -30,6 +35,6 @@ export default function OurStoryComp() {
                 </div>
             </div>
             <RecipeIngredients />
-        </section>
+        </motion.section>
     )
 }

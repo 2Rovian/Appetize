@@ -12,7 +12,7 @@ export default function WelcomeNavbar() {
                 <div className="text-xl">
                     <Link
                         href="/about"
-                        className="text-gray-800 duration-300 hover:text-amber-600 ease-in-out"
+                        className="text-gray-800 duration-300 hover:text-amber-600 ease-in-out p-2"
                     >
                         Why Appetize?
                     </Link>
@@ -20,7 +20,7 @@ export default function WelcomeNavbar() {
 
                 <div>
                     <Link href='/'>
-                        <button className="border-2 border-amber-600 rounded-2xl px-6 py-1 cursor-pointer bg-amber-600 text-white hover:font-bold duration-300 ease-in-out shadow">Home</button>
+                        <button className="border-2 border-amber-600 rounded-lg px-6 py-1 cursor-pointer bg-amber-600 hover:bg-amber-500 text-white font-bold duration-300 ease-in-out shadow">Home</button>
                     </Link>
                 </div>
             </nav>

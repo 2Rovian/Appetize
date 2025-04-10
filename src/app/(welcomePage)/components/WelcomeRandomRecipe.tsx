@@ -7,6 +7,8 @@ import Link from 'next/link';
 import SpinRandom from "./SpinRandom";
 import Expand_img_wel from "./Expand_img_wel";
 
+import * as motion from 'motion/react-client'
+
 export default function WelcomeRandomRecipe() {
     type Recipe = {
         idMeal: string;
@@ -33,14 +35,19 @@ export default function WelcomeRandomRecipe() {
             setRecipe(data.meals[0]);
         } catch (error) {
             console.error("Error fetching random recipe:", error)
-        } finally{
+        } finally {
             setisLoading(false);
         }
 
     }
 
     return (
-        <div className="border-0 rounded-md overflow-hidden relative shadow-md shadow-amber-600/50 my-0 md:mt-16 bg-gray-200 text-black h-fit">
+        <motion.div className="border-0 rounded-md overflow-hidden relative shadow-md shadow-amber-600/50 my-0 md:mt-16 bg-white text-black h-fit"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            viewport={{ once: true }}
+        >
             <div className="relative max-h-[250px] group">
                 <Image
                     src={recipe.strMealThumb}
@@ -50,15 +57,15 @@ export default function WelcomeRandomRecipe() {
                     className="w-full object-cover max-h-[250px] md:h-full "
                     loading="lazy"
                 />
-                <Expand_img_wel receitaImg={recipe.strMealThumb}/>
+                <Expand_img_wel receitaImg={recipe.strMealThumb} />
                 <button className={`absolute p-2 text-white rounded-md top-2 right-2 cursor-pointer text-lg hover:bg-amber-500 ease-in-out duration-200 shadow ${isLoading ? "bg-amber-500" : "bg-amber-600"}`}
                     onClick={handleRandomRecipe}
                     disabled={isLoading}
                 >
-                    {isLoading ? 
-                    (<SpinRandom />) : 
-                    (<GiPerspectiveDiceSixFacesRandom />)}
-                    
+                    {isLoading ?
+                        (<SpinRandom />) :
+                        (<GiPerspectiveDiceSixFacesRandom />)}
+
                 </button>
             </div>
             <div className="p-4 pt-2">
@@ -66,9 +73,9 @@ export default function WelcomeRandomRecipe() {
                     <h3 className="text-2xl font-semibold mb-1">{recipe.strMeal}</h3>
                 </Link>
                 <p className="text-gray-600 text-sm">
-                    {recipe.strCategory} • {recipe.strArea}
+                    {recipe.strCategory} • <Link href={`http://localhost:3000/countries/${recipe.strArea}`}>{recipe.strArea}</Link>
                 </p>
             </div>
-        </div>
+        </motion.div>
     )
 }

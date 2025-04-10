@@ -5,25 +5,34 @@ import { MdSwitchAccount } from "react-icons/md";
 import OurStoryComp from "../components/OurStoryComp";
 import NoiseBackground from "@/app/NoiseBackground";
 
+import * as motion from 'motion/react-client'
 
 export default function AboutPage() {
     return (
         <div>
-            {/* background noise */}
             <NoiseBackground />
-            {/* background noise */}
 
             <main className="max-w-7xl mx-auto px-4 py-12 relative z-10">
-                <section className="text-center mb-16">
+                <motion.section className="text-center mb-16"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1}}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                viewport={{ once: true }}
+                >
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                        About <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-orange-700">Appetize</span>
+                        About <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-orange-700 font-serif"><a href="/">Appetize</a></span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Your compass for navigating world cuisines and culinary experiments
+                        Your compass for navigating world cuisines and culinary experiments
                     </p>
-                </section>
+                </motion.section>
 
-                <section className="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <motion.section className="grid md:grid-cols-2 gap-12 items-center mb-20"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, ease: 'easeOut' }}
+                viewport={{ once: true }}
+                >
                     <div>
                         <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
                         <p className="text-lg mb-4">
@@ -55,9 +64,14 @@ export default function AboutPage() {
                             className="object-cover"
                         />
                     </div>
-                </section>
+                </motion.section>
 
-                <section className="mb-20">
+                <motion.section className="mb-20"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.5, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                >
                     <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Appetize?</h2>
                     <div className="grid md:grid-cols-3 gap-x-8 gap-y-4">
                         {[
@@ -84,9 +98,15 @@ export default function AboutPage() {
                             </div>
                         ))}
                     </div>
-                </section>
+                </motion.section>
 
-                <section className="bg-amber-50 rounded-xl p-8 md:p-12 mb-20">
+                <motion.section className="bg-amber-50 rounded-xl p-8 md:p-12 mb-20"
+
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.5, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                >
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-3xl font-bold mb-12">Our Technology</h2>
                         <p className="text-lg mb-6">
@@ -103,16 +123,21 @@ export default function AboutPage() {
                                 Visit MealDB
                             </a>
                             <a
-                                href="/home"
+                                href="/"
                                 className="border border-amber-600 text-amber-600 px-6 py-3 rounded-full duration-300 ease-in-out hover:bg-amber-600 hover:text-white"
                             >
                                 Start Cooking
                             </a>
                         </div>
                     </div>
-                </section>
+                </motion.section>
 
-                <section className="mb-20 rounded-xl p-0">
+                <motion.section className="mb-20 rounded-xl p-0"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, ease: 'easeOut' }}
+                viewport={{ once: true }}
+                >
                     <h2 className="text-3xl font-bold mb-8 text-center">
                         Our <span className="text-amber-600">Recipe</span> Philosophy
                     </h2>
@@ -137,11 +162,16 @@ export default function AboutPage() {
                             </div>
                         ))}
                     </div>
-                </section>
+                </motion.section>
 
                 <OurStoryComp />
 
-                <section className="mb-20">
+                <motion.section className="mb-20"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, ease: 'easeOut' }}
+                viewport={{ once: true }}
+                >
                     <h2 className="text-3xl font-bold mb-8 text-center">
                         What's <span className="text-amber-600">Coming Next</span>
                     </h2>
@@ -177,7 +207,7 @@ export default function AboutPage() {
                         ))}
                     </div>
 
-                </section>
+                </motion.section>
             </main>
         </div >
 

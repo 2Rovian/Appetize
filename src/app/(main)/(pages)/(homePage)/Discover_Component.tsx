@@ -6,6 +6,8 @@ import { FaGhost } from "react-icons/fa";
 import Link from 'next/link';
 import Image from "next/image";
 
+import * as motion from 'motion/react-client'
+
 export default function Discover_Component() {
     const [mealIngredients, setMealIngredients] = useState<string[]>([]);
     const [inputValue, setInputValue] = useState<string>('');
@@ -14,7 +16,7 @@ export default function Discover_Component() {
     const [ShowDropdownRecipes, setShowDropdownRecipes] = useState<boolean>(false);
     const [debouncedInput, setDebouncedInput] = useState<string>('');
 
-    const mealIngredientsFiltrados = mealIngredients.filter((meal) => 
+    const mealIngredientsFiltrados = mealIngredients.filter((meal) =>
         meal.toLowerCase().includes(debouncedInput.toLowerCase())
     );
 
@@ -55,7 +57,7 @@ export default function Discover_Component() {
 
     const handleSearchByIngredients = async () => {
         if (!inputValue) return;
-        
+
         try {
             const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${inputValue}`);
             const data = await response.json();
@@ -68,14 +70,19 @@ export default function Discover_Component() {
     };
 
     return (
-        <section className="flex flex-col justify-center items-center mt-12">
+        <motion.section className="flex flex-col justify-center items-center mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+        >
             <h2 className="text-2xl font-semibold font-serif">Explore Delicious Recipes</h2>
             <p>Crave it. Cook it. Enjoy it. </p>
             <div className="flex flex-col w-full mt-4 bg-white rounded-xl shadow-md p-5 max-w-3xl">
                 <div className="flex gap-x-2">
                     <div className='grow outline-1 outline-gray-300 shadow rounded-md relative flex items-center'>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             placeholder="Search ingredient..."
                             className='size-full outline-none rounded-md pl-3'
                             value={inputValue}
@@ -87,7 +94,7 @@ export default function Discover_Component() {
                             }}
                         />
                         {inputValue && (
-                            <span 
+                            <span
                                 className="px-2 py-1 text-xl font-bold cursor-pointer duration-200 ease-in-out text-gray-600 hover:text-black"
                                 onClick={() => {
                                     setInputValue('');
@@ -101,8 +108,8 @@ export default function Discover_Component() {
                         {ShowDropdown && debouncedInput && mealIngredientsFiltrados.length > 0 && (
                             <ul className="w-full flex flex-col absolute top-[45px] bg-white z-50 border-1 rounded-md border-gray-300 shadow-lg overflow-y-auto max-h-[150px]">
                                 {mealIngredientsFiltrados.map((meal, index) => (
-                                    <li 
-                                        key={index} 
+                                    <li
+                                        key={index}
                                         className="px-3 py-1 cursor-pointer hover:bg-amber-600 hover:text-white"
                                         onClick={() => handleSetInputValue(meal)}
                                     >
@@ -121,7 +128,7 @@ export default function Discover_Component() {
                             </div>
                         )}
                     </div>
-                    <button 
+                    <button
                         className={`px-6 py-2 ${!inputValue ? "bg-amber-400 cursor-not-allowed" : "bg-amber-500 hover:bg-amber-600 cursor-pointer"} font-semibold text-white rounded-md duration-300 ease-in-out`}
                         onClick={handleSearchByIngredients}
                         disabled={!inputValue}
@@ -132,19 +139,19 @@ export default function Discover_Component() {
                 <div className="flex mt-2 gap-x-2 items-center">
                     <span>Popular Tags: </span>
                     <ul className="flex gap-x-2">
-                        <li 
+                        <li
                             className={`px-3 py-1 cursor-pointer rounded-full outline-1 outline-gray-200 ${inputValue === 'Salmon' ? "bg-amber-600 text-white" : ""} shadow hover:bg-amber-400 duration-500 hover:text-white ease-in-out hover:outline-none`}
                             onClick={() => setInputValue('Salmon')}
                         >
                             Salmon
                         </li>
-                        <li 
+                        <li
                             className={`px-3 py-1 cursor-pointer rounded-full outline-1 outline-gray-200 ${inputValue === 'Chicken' ? "bg-amber-600 text-white" : ""} shadow hover:bg-amber-400 duration-500 hover:text-white ease-in-out hover:outline-none`}
                             onClick={() => setInputValue('Chicken')}
                         >
                             Chicken
                         </li>
-                        <li 
+                        <li
                             className={`px-3 py-1 cursor-pointer rounded-full outline-1 outline-gray-200 ${inputValue === 'Pork' ? "bg-amber-600 text-white" : ""} shadow hover:bg-amber-400 duration-500 hover:text-white ease-in-out hover:outline-none`}
                             onClick={() => setInputValue('Pork')}
                         >
@@ -160,10 +167,10 @@ export default function Discover_Component() {
                                 <article className="rounded-md shadow flex flex-col overflow-hidden relative">
                                     <div className="h-full relative overflow-hidden">
                                         <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
-                                            <Image 
+                                            <Image
                                                 width={600}
                                                 height={600}
-                                                src={meal.strMealThumb} 
+                                                src={meal.strMealThumb}
                                                 alt=""
                                                 loading='lazy'
                                                 className="object-cover object-center size-full max-h-[300px] hover:scale-105 duration-500 transition-transform"
@@ -198,6 +205,6 @@ export default function Discover_Component() {
                     </ul>
                 )}
             </div>
-        </section>
+        </motion.section>
     )
 }

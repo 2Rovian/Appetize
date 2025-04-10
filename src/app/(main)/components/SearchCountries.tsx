@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaPlus } from "react-icons/fa";
+import * as motion from 'motion/react-client'
 
 export default function SearchCountries() {
     const countries_array = [
@@ -8,10 +9,15 @@ export default function SearchCountries() {
         { id: 3, nome: 'Canadian', img: 'https://images.stockcake.com/public/0/2/e/02e89eff-5f90-45ba-bdd0-3ea00f05a8c8_large/proud-canadian-flag-stockcake.jpg' },
         { id: 4, nome: 'Chinese', img: 'https://img.freepik.com/fotos-gratis/foto-realista-da-bandeira-da-china-acenando-com-texturas-interessantes_181624-9285.jpg' },
         { id: 5, nome: 'Croatian', img: 'https://img.freepik.com/premium-vector/croatia-flag-design-waving-croatian-flag-made-satin-silk-fabric-vector-illustration_191567-1006.jpg' },
-        
+
     ]
     return (
-        <section className="mt-12">
+        <motion.section className="mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+        >
             <h2 className="text-2xl font-semibold font-serif">Countries Recipes</h2>
             <ul className="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 my-2">
                 {countries_array.map((countryItem) => (
@@ -31,7 +37,7 @@ export default function SearchCountries() {
                         </Link>
                     </li>
                 ))}
-               
+
                 <li className="flex flex-col items-center gap-y-2 justify-center cursor-pointer ">
                     <Link href="/countries" className="flex flex-col items-center gap-y-2 p-2">
                         <div className="size-[120px] rounded-full text-amber-300 bg-amber-700 hover:border-4 duration-300 ease-in-out shadow-md flex items-center justify-center text-2xl">
@@ -42,6 +48,6 @@ export default function SearchCountries() {
                 </li>
             </ul>
 
-        </section>
+        </motion.section>
     )
 }

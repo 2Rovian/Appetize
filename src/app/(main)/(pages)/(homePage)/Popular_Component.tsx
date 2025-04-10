@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaPlus } from "react-icons/fa";
 
+import * as motion from 'motion/react-client'
+
 export default function Popular_Component() {
     const categorias_array = [
         { nome: 'Beef', img: 'https://www.themealdb.com/images/category/beef.png', id: 1 },
@@ -12,7 +14,12 @@ export default function Popular_Component() {
         // {nome: 'Pasta', img: 'https://www.themealdb.com/images/category/pasta.png', id: 6}
     ]
     return (
-        <section className="mt-12">
+        <motion.section className="mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+        >
             <h2 className="text-2xl font-semibold font-serif">Popular Categories</h2>
             <ul className="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 my-2">
                 {categorias_array.map((categoriaItem) => (
@@ -35,7 +42,7 @@ export default function Popular_Component() {
                         </Link>
                     </li>
                 ))}
-               
+
                 <li className="flex flex-col items-center gap-y-2 justify-center cursor-pointer ">
                     <Link href="/categories" className="flex flex-col items-center gap-y-2 p-2">
                         <div className="w-[100px] h-[100px] rounded-full text-amber-300 bg-amber-700 hover:border-4 duration-300 ease-in-out shadow-md flex items-center justify-center text-2xl">
@@ -46,6 +53,6 @@ export default function Popular_Component() {
                 </li>
             </ul>
 
-        </section>
+        </motion.section>
     )
 }
