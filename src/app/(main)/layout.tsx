@@ -2,6 +2,7 @@ import { Toaster } from "react-hot-toast";
 import "./main.css";
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer";
+import NoiseBackground from "../NoiseBackground";
 
 export default function MainLayout({
   children,
@@ -15,6 +16,7 @@ export default function MainLayout({
         {children}
         <Toaster position="bottom-right"/>
         <Footer />
+        <NoiseBackground />
       </main>
     </div>
   );

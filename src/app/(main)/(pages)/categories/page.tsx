@@ -21,7 +21,7 @@ export default function Categorias_Page() {
     ]
 
     return (
-        <section className="border-2 mt-4 border-slate-600 relative rounded-md">
+        <section className="border-2 mt-4 border-slate-600 relative rounded-xl">
             <div className="text-2xl text-center font-semibold font-serif w-fit absolute left-1/2 -translate-x-1/2 -top-[18px] z-50 bg-gray-100 px-4">
                 <span className=''>All Categories</span>
                 

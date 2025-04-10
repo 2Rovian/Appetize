@@ -11,7 +11,7 @@ export default function SearchCountries() {
         
     ]
     return (
-        <section className="my-5">
+        <section className="mt-12">
             <h2 className="text-2xl font-semibold font-serif">Countries Recipes</h2>
             <ul className="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 my-2">
                 {countries_array.map((countryItem) => (

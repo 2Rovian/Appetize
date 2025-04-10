@@ -13,7 +13,7 @@ export default function HeroComponent({ recipe }: RecipeProps) {
     .filter(item => typeof item.ingrediente === 'string' && item.ingrediente.trim() !== "")
 
     return (
-        <div className="w-full h-full sm:h-[550px] rounded-md overflow-hidden flex flex-col sm:flex-row shadow-lg bg-amber-100 relative">
+        <div className="w-full h-full sm:h-[550px] rounded-xl overflow-hidden flex flex-col sm:flex-row shadow-lg bg-amber-100 relative">
             {/* Imagem da Receita */}
             <div className="h-[60%] sm:h-[100%] sm:grow relative">
                 <Image

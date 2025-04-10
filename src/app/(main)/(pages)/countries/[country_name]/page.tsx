@@ -26,7 +26,7 @@ export default async function CountryRecipes({
             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3 mb-5">
                 {receitas.map((meal: any) => (
                     <li key={meal.idMeal}>
-                        <article className="rounded-md shadow flex flex-col overflow-hidden relative">
+                        <article className="rounded-md shadow-md flex flex-col overflow-hidden relative">
                             <div className="h-full relative overflow-hidden">
                                 <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
                                     <Image 

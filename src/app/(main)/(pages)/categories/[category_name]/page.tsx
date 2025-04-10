@@ -21,8 +21,8 @@ export default async function Categoria_Nome({
 
             <div className="flex items-center w-full">
                 <div className="bg-gray-400 h-[2px] grow" />
-                <h1 className="text-2xl px-4 font-semibold font-serif  whitespace-nowrap text-gray-700 ">
-                    Recipes with <span className='text-black font-bold'>{category_name}</span>
+                <h1 className="text-2xl px-4 font-semibold font-serif  whitespace-nowrap text-gray-900 ">
+                    Recipes with <span className='text-amber-600 font-bold'>{category_name}</span>
                 </h1>
                 <div className="bg-gray-400 h-[2px] grow" />
             </div>
@@ -30,7 +30,7 @@ export default async function Categoria_Nome({
             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3 mb-5">
                 {receitas.map((meal: any) => (
                     <li key={meal.idMeal}>
-                        <article className="rounded-md shadow flex flex-col overflow-hidden relative">
+                        <article className="rounded-md shadow-md flex flex-col overflow-hidden relative ">
                             <div className="h-full relative overflow-hidden">
                                 <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
                                     <Image 

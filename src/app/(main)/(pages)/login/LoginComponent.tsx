@@ -10,8 +10,7 @@ export default function LoginComponent() {
 
     return (
         <div className="flex flex-col items-center mx-auto">
-            {/* <h1 className="my-5 text-3xl font-bold font-serif">MeuSaas</h1> */}
-            <div className="mt-0 rounded-lg border bg-white border-gray-400 shadow text-black flex flex-col p-5 w-full max-w-[500px]">
+            <div className="mt-0 border border-gray-400 text-black flex flex-col p-5 w-full max-w-[500px] bg-white rounded-xl shadow-md">
                 <div className="mb-5">
                     <h2 className="text-2xl text-amber-600 font-bold">{isLogin ? "Welcome" : "Sign Up"}</h2>
                     <p className="text-amber-900">{isLogin ? "Log in with your username and password." : "Sign up for free."}</p>

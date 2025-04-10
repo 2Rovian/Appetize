@@ -3,20 +3,14 @@ import { FaHeart, FaUtensils, FaUsers, FaRegStar } from 'react-icons/fa';
 import { LuBrainCircuit } from "react-icons/lu";
 import { MdSwitchAccount } from "react-icons/md";
 import OurStoryComp from "../components/OurStoryComp";
+import NoiseBackground from "@/app/NoiseBackground";
 
 
 export default function AboutPage() {
     return (
         <div>
             {/* background noise */}
-            <div
-                className="fixed inset-0 z-[-1] opacity-5 pointer-events-none"
-                style={{
-                    backgroundImage: `url('/noise-bg1.jpg')`,
-                    backgroundRepeat: 'repeat',
-                    backgroundSize: 'auto'
-                }}
-            />
+            <NoiseBackground />
             {/* background noise */}
 
             <main className="max-w-7xl mx-auto px-4 py-12 relative z-10">
@@ -83,7 +77,7 @@ export default function AboutPage() {
                                 description: "Powered by contributors worldwide via MealDB"
                             }
                         ].map((feature, index) => (
-                            <div key={index} className="bg-white p-8 rounded-xl shadow-md flex flex-col items-center text-center">
+                            <div key={index} className="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center">
                                 <span >{feature.icon}</span>
                                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                                 <p className="text-gray-600">{feature.description}</p>

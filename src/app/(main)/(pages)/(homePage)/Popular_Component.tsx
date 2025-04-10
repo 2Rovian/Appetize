@@ -12,7 +12,7 @@ export default function Popular_Component() {
         // {nome: 'Pasta', img: 'https://www.themealdb.com/images/category/pasta.png', id: 6}
     ]
     return (
-        <section className="mt-7 mb-3">
+        <section className="mt-12">
             <h2 className="text-2xl font-semibold font-serif">Popular Categories</h2>
             <ul className="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 my-2">
                 {categorias_array.map((categoriaItem) => (

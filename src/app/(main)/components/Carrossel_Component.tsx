@@ -25,7 +25,7 @@ export default function Carrossel_Component() {
     };
 
     return (
-        <div className="border-0 rounded-md overflow-hidden relative shadow">
+        <div className="border-0 overflow-hidden relative rounded-xl shadow-md">
             <div className="h-[500px]">
                 {/* mudar pra image */}
                 <Image 
