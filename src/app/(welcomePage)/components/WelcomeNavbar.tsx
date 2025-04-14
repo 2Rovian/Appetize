@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Dropdown_wel from "../welcome/Dropdown"
 export default function WelcomeNavbar() {
     return (
         <header className="h-[80px] w-full">
@@ -9,7 +10,11 @@ export default function WelcomeNavbar() {
                     </Link>
                 </div>
 
-                <div className="text-xl">
+                <div className='sm:hidden'>
+                    <Dropdown_wel />
+                </div>
+
+                <div className="text-xl hidden sm:block">
                     <Link
                         href="/about"
                         className="text-gray-800 duration-300 hover:text-amber-600 ease-in-out p-2"

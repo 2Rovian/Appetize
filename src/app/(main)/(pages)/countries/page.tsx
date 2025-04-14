@@ -41,11 +41,11 @@ export default function Countries_Page() {
 
     return (
         <section className="border-2 mt-4 border-slate-600 relative rounded-md">
-            <div className="text-2xl text-center font-semibold font-serif w-fit absolute left-1/2 -translate-x-1/2 -top-[18px] z-50 bg-gray-200 px-4">
+            <div className="sm:text-2xl text-lg text-center font-semibold font-serif w-fit absolute left-1/2 -translate-x-1/2 -top-[18px] z-50 bg-gray-200 px-4">
                 <span className=''>All Countries</span>
                 
             </div>
-            <ul className="grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 my-2 p-2">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5 my-2 p-2">
                 {countries_array.map((countryItem) => (
                     <li
                         key={countryItem.id}

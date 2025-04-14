@@ -21,7 +21,7 @@ export default function Popular_Component() {
             viewport={{ once: true }}
         >
             <h2 className="text-2xl font-semibold font-serif">Popular Categories</h2>
-            <ul className="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 my-2">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 my-2">
                 {categorias_array.map((categoriaItem) => (
                     <li
                         key={categoriaItem.id}

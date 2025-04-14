@@ -23,7 +23,7 @@ export default function HeroComponent({ recipe }: RecipeProps) {
                     alt={recipe.strMeal}
                     className="w-full h-full object-cover"
                 />
-                <Expand_img recipeImg={recipe.strMealThumb}/>
+                {recipe.strMealThumb && <Expand_img recipeImg={recipe.strMealThumb} />}
                 <SaveRecipe recipe={recipe}/>
             </div>
 

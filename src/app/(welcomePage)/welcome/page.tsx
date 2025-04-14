@@ -38,12 +38,12 @@ export default function WelcomePage() {
                     transition={{ duration: 1.5, ease: 'easeOut' }}
                     viewport={{ once: true }}
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    <h1 className="text-xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 leading-tight">
                         Transform Ingredients<br />
                         <span className="text-amber-600">Into Masterpieces</span>
                     </h1>
 
-                    <p className="text-lg font-normal font-sans mb-8 opacity-90">
+                    <p className="sm:text-lg font-normal font-sans mb-4 sm:mb-8 opacity-90">
                         Discover <span className="font-semibold">5,000+ chef-curated recipes </span>
                         and unlock the joy of cooking with our step-by-step guides.
                     </p>

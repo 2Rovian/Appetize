@@ -38,7 +38,7 @@ export default function Famous_Component() {
             viewport={{ once: true }}
         >
             <h2 className="text-2xl font-semibold font-serif">Amazing Recipes</h2>
-            <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
+            <ul className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
                 {array_articles.map((articleItem: any) => (
                     <li key={articleItem.idMeal}>
                         <article className=" flex flex-col overflow-hidden bg-white rounded-xl shadow-md">

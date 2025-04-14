@@ -3,7 +3,7 @@ import { useState } from "react"
 import { LuExpand, LuX } from "react-icons/lu";
 import Image from 'next/image'
 
-export default function Expand_img({ receitaImg }: any) {
+export default function Expand_img({ recipeImg }: any) {
     const [MostrarImagem, setMostrarImagem] = useState<boolean>(false);
     return (
         <>
@@ -31,7 +31,7 @@ export default function Expand_img({ receitaImg }: any) {
                         <Image
                             width={600}
                             height={600}
-                            src={receitaImg}
+                            src={recipeImg}
                             alt="Imagem expandida"
                             className="w-full max-h-[90vh] object-contain"
                         />

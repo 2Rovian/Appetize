@@ -3,7 +3,7 @@ import * as motion from 'motion/react-client'
 
 export default function CallToAction() {
     return (
-        <motion.section className="h-[150px] mt-12 w-full bg-amber-700 rounded-md text-gray-100 flex items-center justify-center"
+        <motion.section className="h-fit py-6 mt-12 w-full bg-amber-700 rounded-md text-gray-100 flex items-center justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
