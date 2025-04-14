@@ -187,7 +187,7 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                         <li key={meal.idMeal}>
                             <article className="flex flex-col overflow-hidden relative bg-white rounded-xl shadow-md">
                                 <div className="h-full relative overflow-hidden">
-                                    <Link href={`http://localhost:3000/recipe/${meal.idMeal}`} className='cursor-pointer'>
+                                    <Link href={`/recipe/${meal.idMeal}`} className='cursor-pointer'>
                                         <Image
                                             width={600}
                                             height={600}
@@ -198,7 +198,7 @@ export default function Search_Component({ CategoriaSelecionada }: any) {
                                     </Link>
                                 </div>
                                 <div className='absolute top-0 w-full bg-amber-950/50 text-white p-2 flex flex-col justify-between font-semibold'>
-                                    <Link href={`http://localhost:3000/recipe/${meal.idMeal}`}>
+                                    <Link href={`/recipe/${meal.idMeal}`}>
                                         <h2 className='text-center cursor-pointer'>{meal.strMeal}</h2>
                                     </Link>
                                 </div>

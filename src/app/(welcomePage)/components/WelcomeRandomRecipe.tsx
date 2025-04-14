@@ -73,7 +73,7 @@ export default function WelcomeRandomRecipe() {
                     <h3 className="text-2xl font-semibold mb-1">{recipe.strMeal}</h3>
                 </Link>
                 <p className="text-gray-600 text-sm">
-                    {recipe.strCategory} • <Link href={`http://localhost:3000/countries/${recipe.strArea}`}>{recipe.strArea}</Link>
+                    {recipe.strCategory} • <Link href={`/countries/${recipe.strArea}`}>{recipe.strArea}</Link>
                 </p>
             </div>
         </motion.div>
